@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CriticografoMVVM_JSVE.Vistas.pagina1">
+ 
+
+     
+        <StackLayout BackgroundColor="AliceBlue">
+            <Frame Padding="0" CornerRadius="0" BackgroundColor="Beige">
+                <Label Text="ACTIVIDAD: 'CRITICOGRAFO'" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Frame>
+            <Grid>
+                <Label Margin="15" Grid.Row="0" TextColor="Black">NOMBRE:</Label>
+                <Entry Grid.Column="0" Grid.Row="1" Placeholder="Escribe" MaxLength="100" Margin="0,0,60,0" x:Name="Entry1" Text="{Binding Nombre}" />
+
+                <!-- RADIOBUTTONS UWU -->
+                <Label Text="GÉNERO: " TextColor="BLACK" Grid.Column="0" Grid.Row="2"/>
+                <RadioButton Grid.Column="0" Grid.Row="3" TextColor="Black" x:Name="Hombre" IsChecked="{Binding EsHombre}" />
+                <Label Text="HOMBRE" Grid.Row="3" Grid.Column="0"  Margin="50,15,0,0"/>
+                <RadioButton Grid.Column="1" Grid.Row="3" x:Name="Mujer" IsChecked="{Binding !EsHombre}" />
+                <Label Text="MUJER" Grid.Row="3" Grid.Column="1"  Margin="50,15,0,0" />
+
+                <!-- CHECKBOX ABAJITO XDDD -->
+                <CheckBox Grid.Column="0" Grid.Row="5" Color="Black" x:Name="Alto" IsChecked="{Binding EsAlto}" />
+                <Label Text="ALTO" TextColor="Black" Grid.Column="0" Grid.Row="5" Margin="50,15,0,0"/>
+
+                <CheckBox Grid.Column="1" Grid.Row="5" Color="Black" x:Name="Feo" IsChecked="{Binding EsFeo}" />
+                <Label Text="FEO" TextColor="Black" Grid.Column="1" Grid.Row="5" Margin="50,15,0,0"/>
+
+                <CheckBox Grid.Column="0" Grid.Row="6" Color="Black" x:Name="Listo" IsChecked="{Binding EsListo}" />
+                <Label Text="LISTO" TextColor="Black" Grid.Column="0" Grid.Row="6" Margin="50,15,0,0"/>
+
+                <CheckBox Grid.Column="1" Grid.Row="6" Color="Black" x:Name="Extrav" IsChecked="{Binding EsExtrav}" />
+                <Label Text="EXTRAVAGANTE" TextColor="Black" Grid.Column="1" Grid.Row="6" Margin="50,15,0,0"/>
+
+                <CheckBox Grid.Column="0" Grid.Row="7" Color="Black" x:Name="Raro" IsChecked="{Binding EsRaro}" />
+                <Label Text="RARO" TextColor="Black" Grid.Column="0" Grid.Row="7" Margin="50,15,0,0"/>
+
+                <CheckBox Grid.Column="1" Grid.Row="7" Color="Black" x:Name="Grande" IsChecked="{Binding EsGrande}" />
+                <Label Text="GRANDE" TextColor="Black" Grid.Column="1" Grid.Row="7" Margin="50,15,0,0"/>
+            </Grid>
+
+            <Button Text="CRITICAR"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="8" Margin="20,0,20,200"
+                BorderColor="Black"
+                BorderWidth="1" 
+                FontSize="25"
+                Command="{Binding CriticarCommand}"
+                />
+
+            <Entry TextColor="Black" Margin="0,0,0,50" x:Name="Resultado" Text="{Binding Resultado}" />
+        </StackLayout>
+    </ContentPage>
+    
