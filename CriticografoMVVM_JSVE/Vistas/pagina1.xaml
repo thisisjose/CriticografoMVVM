@@ -17,7 +17,7 @@
             <Label Text="GÉNERO: " TextColor="BLACK" Grid.Column="0" Grid.Row="2"/>
             <RadioButton Grid.Column="0" Grid.Row="3" TextColor="Black" x:Name="Hombre" IsChecked="{Binding esHombre}" />
             <Label Text="HOMBRE" Grid.Row="3" Grid.Column="0"  Margin="50,15,0,0"/>
-            <RadioButton Grid.Column="1" Grid.Row="3" x:Name="Mujer" IsChecked="{Binding EsMujer}" />
+            <RadioButton Grid.Column="1" Grid.Row="3" x:Name="Mujer" IsChecked="{Binding esMujer}" />
             <Label Text="MUJER" Grid.Row="3" Grid.Column="1"  Margin="50,15,0,0" />
 
             <!-- CHECKBOX ABAJITO XDDD -->
