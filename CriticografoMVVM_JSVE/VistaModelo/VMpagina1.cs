@@ -101,7 +101,7 @@ namespace CriticografoMVVM_JSVE.VistaModelo
                     BtnComa(mensaje, esRaro, "raro");
                     BtnComa(mensaje, esGrande, "grande");
                 }
-                else
+                else if (esMujer)
                 {
                     BtnComa(mensaje, esAlto, "altita");
                     BtnComa(mensaje, esFeo, "feita");
