@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CriticografoMVVM_JSVE.Vistas.pagina1">
+              x:Class="CriticografoMVVM_JSVE.Vistas.pagina1">
  
 
      
@@ -30,10 +30,10 @@
                 <CheckBox Grid.Column="0" Grid.Row="6" Color="Black" x:Name="Listo" IsChecked="{Binding EsListo}" />
                 <Label Text="LISTO" TextColor="Black" Grid.Column="0" Grid.Row="6" Margin="50,15,0,0"/>
 
-                <CheckBox Grid.Column="1" Grid.Row="6" Color="Black" x:Name="Extrav" IsChecked="{Binding EsExtrav}" />
-                <Label Text="EXTRAVAGANTE" TextColor="Black" Grid.Column="1" Grid.Row="6" Margin="50,15,0,0"/>
+            <CheckBox Grid.Column="1" Grid.Row="6" Color="Black" x:Name="Extrav" IsChecked="{Binding EsExtrav}" />
+            <Label Text="EXTRAVAGANTE" TextColor="Black" Grid.Column="1" Grid.Row="6" Margin="50,15,0,0"/>
 
-                <CheckBox Grid.Column="0" Grid.Row="7" Color="Black" x:Name="Raro" IsChecked="{Binding EsRaro}" />
+            <CheckBox Grid.Column="0" Grid.Row="7" Color="Black" x:Name="Raro" IsChecked="{Binding EsRaro}" />
                 <Label Text="RARO" TextColor="Black" Grid.Column="0" Grid.Row="7" Margin="50,15,0,0"/>
 
                 <CheckBox Grid.Column="1" Grid.Row="7" Color="Black" x:Name="Grande" IsChecked="{Binding EsGrande}" />

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CriticografoMVVM_JSVE.VistaModelo;
+using CriticografoMVVM_JSVE.Vistas;
+
 
 namespace CriticografoMVVM_JSVE.Vistas
 {

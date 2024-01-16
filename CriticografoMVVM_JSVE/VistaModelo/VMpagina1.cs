@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using CriticografoMVVM_JSVE.VistaModelo;
+using CriticografoMVVM_JSVE.Vistas;
 
 namespace CriticografoMVVM_JSVE.VistaModelo
 {
@@ -83,21 +86,64 @@ namespace CriticografoMVVM_JSVE.VistaModelo
         #endregion
 
         #region PROCESOS
-        public async Task Procesoasync()
+        public void Mostrar()
         {
+            var mensaje = new StringBuilder($"{nombre} es");
 
+            if (esHombre || esMujer)
+            {
+                if (esHombre)
+                {
+                    BtnComa(mensaje, esAlto, "alto");
+                    BtnComa(mensaje, esFeo, "feo");
+                    BtnComa(mensaje, esListo, "listo");
+                    BtnComa(mensaje, esExtrav, "extravagante");
+                    BtnComa(mensaje, esRaro, "raro");
+                    BtnComa(mensaje, esGrande, "grande");
+                }
+                else
+                {
+                    BtnComa(mensaje, esAlto, "altita");
+                    BtnComa(mensaje, esFeo, "feita");
+                    BtnComa(mensaje, esListo, "lista");
+                    BtnComa(mensaje, esExtrav, "extravagante");
+                    BtnComa(mensaje, esRaro, "rarita");
+                    BtnComa(mensaje, esGrande, "grandecita");
+                }
+            }
+
+            string mensajeString = mensaje.ToString().TrimEnd(' ', ',');
+
+            string[] partes = mensajeString.Split(new string[] { ", " }, StringSplitOptions.None);
+            if (partes.Length > 1)
+            {
+                mensaje = new StringBuilder(string.Join(", ", partes.Take(partes.Length - 1)) + " y " + partes.Last());
+            }
+
+            resultado = mensaje.ToString() + ".";
         }
 
-        public void Sumar()
+        private void BtnComa(StringBuilder mensaje, bool isChecked, string caracteristica)
         {
-            
+            if (isChecked)
+            {
+                if (mensaje.Length > 0)
+                {
+                    mensaje.Append(", ");
+                }
+
+                mensaje.Append(caracteristica);
+            }
         }
+
+
+
 
         #endregion
 
         #region COMANDOS
-        public ICommand Procesoasynccommand => new Command(async () => await Procesoasync());
-        public ICommand Suymarcommand => new Command(Sumar);
+        public ICommand MostrarCommand => new Command(Mostrar);
+
         #endregion
     }
 }
